@@ -26,10 +26,11 @@
     - name: Create Lab Locations
       redhat.satellite.location:
         name: "{{ item}}"
-        organziations: "{{ org_name }}"
+        organizations: "{{ org_name }}"
         state: present
         server_url: "{{ sat_url }}"
-        username: "{{ sat_pw }}"
+        username: "{{ sat_un }}"
+        password: "{{ sat_pw }}"
         validate_certs: "{{ cert_validate }}"
       loop: "{{ org_locations }}"
 
